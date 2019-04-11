@@ -5,7 +5,7 @@ COPY build.sh /go
 RUN /go/build.sh
 
 
-FROM gcr.io/distroless/base
+FROM gcr.io/distroless/static
 
 COPY --from=0 /go/caddy /usr/local/bin/caddy
 
