@@ -5,7 +5,7 @@ cd /root
 
 pushd caddy
 
-go build .
+CGO_ENABLED=0 go build .
 
 popd
 

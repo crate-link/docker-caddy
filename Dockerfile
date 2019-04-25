@@ -7,7 +7,7 @@ ENV GO111MODULE=on
 RUN /root/build.sh
 
 
-FROM gcr.io/distroless/base
+FROM gcr.io/distroless/static
 
 COPY --from=0 /root/caddy/caddy /usr/local/bin/caddy
 
