@@ -1,13 +1,15 @@
 FROM golang:1.12
 
-COPY build.sh /go
+COPY root/ /root
 
-RUN /go/build.sh
+ENV GO111MODULE=on
+
+RUN /root/build.sh
 
 
 FROM gcr.io/distroless/base
 
-COPY --from=0 /go/caddy /usr/local/bin/caddy
+COPY --from=0 /root/caddy/caddy /usr/local/bin/caddy
 
 EXPOSE 80 443
 VOLUME /home
