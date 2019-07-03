@@ -12,8 +12,8 @@ FROM gcr.io/distroless/static
 COPY --from=0 /root/caddy/caddy /usr/local/bin/caddy
 
 EXPOSE 80 443
-VOLUME /home
-WORKDIR /home
+VOLUME /root
+WORKDIR /root
 
 ENTRYPOINT [ "caddy" ]
 CMD [ "-agree" ]
