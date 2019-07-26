@@ -15,6 +15,8 @@ EXPOSE 80 443
 VOLUME /root
 WORKDIR /root
 
+ENV HOME=/root
+
 ENTRYPOINT [ "caddy" ]
 CMD [ "-agree" ]
 
